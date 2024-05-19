@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragile Watermarking</title>
+</head>
+<body>
+    <input type="file" id="upload" accept="image/*">
+    <br>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <img id="watermarkedImage" alt="Watermarked Image">
+    <br>
+    <button id="applyButton" style="display:none;">Apply Watermark</button>
+    <button id="extractButton" style="display:none;">Extract Watermark</button>
+    <br>
+    <canvas id="watermarkCanvas" style="display:none;"></canvas>
+    <img id="extractedWatermark" alt="Extracted Watermark">
+    <script src="watermark.js"></script>
+</body>
+</html>
