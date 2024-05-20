@@ -22,6 +22,8 @@ function handleImageUpload(event) {
             watermarkedImg.style.display = 'block';
             document.getElementById('applyButton').style.display = 'inline';
             document.getElementById('extractButton').style.display = 'inline';
+            document.getElementById('watermarkedImage').style.display = 'inline';
+            document.getElementById('no-img').style.display = 'none';
         }
         img.src = e.target.result;
     }
@@ -62,7 +64,7 @@ function extractWatermark() {
     const imageData = context.getImageData(0, 0, width, height);
     const data = imageData.data;
     
-    const watermarkCanvas = document.getElementById('watermarkCanvas');
+    const watermarkCanvas = document.getElementById('canvas');
     const watermarkContext = watermarkCanvas.getContext('2d');
     watermarkCanvas.width = width;
     watermarkCanvas.height = height;
@@ -78,7 +80,7 @@ function extractWatermark() {
     }
 
     watermarkContext.putImageData(watermarkData, 0, 0);
-    const extractedWatermark = document.getElementById('extractedWatermark');
+    const extractedWatermark = document.getElementById('watermarkedImage');
     extractedWatermark.src = watermarkCanvas.toDataURL();
-    extractedWatermark.style.display = 'block';
+    extractedWatermark.style.display = 'inline';
 }
