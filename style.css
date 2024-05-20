@@ -65,6 +65,7 @@ body{
     align-content: center;
     justify-content: center;
     justify-items: center;
+    scale: 0.9;
     transition: all ease-in-out 0.2s;
 }
 

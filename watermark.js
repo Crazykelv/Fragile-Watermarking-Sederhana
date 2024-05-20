@@ -83,7 +83,7 @@ function extractWatermark() {
     const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
     const data = imageData.data;
     
-    const watermarkCanvas = document.getElementById('watermarkCanvas');
+    const watermarkCanvas = document.getElementById('canvas');
     const watermarkContext = watermarkCanvas.getContext('2d');
     watermarkCanvas.width = canvas.width;
     watermarkCanvas.height = canvas.height;
@@ -97,7 +97,7 @@ function extractWatermark() {
     }
 
     watermarkContext.putImageData(watermarkData, 0, 0);
-    const extractedWatermark = document.getElementById('extractedWatermark');
+    const extractedWatermark = document.getElementById('watermarkedImage');
     extractedWatermark.src = watermarkCanvas.toDataURL();
     extractedWatermark.style.display = 'block';
 }
